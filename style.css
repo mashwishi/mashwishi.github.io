@@ -7,8 +7,8 @@
 }
 
 .typing {
-  width: 7ch;
-  animation: typing 3s steps(7), blink .5s step-end infinite alternate;
+  width: 9ch;
+  animation: typing 3s steps(9), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -27,4 +27,3 @@
     border-color: transparent
   }
 }
-
