@@ -7,8 +7,8 @@
 }
 
 .typing {
-  width: 22ch;
-  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  width: 7ch;
+  animation: typing 3s steps(7), blink .5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
@@ -28,4 +28,3 @@
   }
 }
 
-Resources1× 0.5× 0.25×Rerun
