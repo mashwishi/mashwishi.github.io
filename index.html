@@ -529,20 +529,32 @@
         <script src="assets/js/theme.js"></script>
         
         <script type="text/javascript">
-        function click (e) {
-          if (!e)
-            e = window.event;
-          if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
-            if (window.opera)
-              window.alert("");
-            return false;
-          }
-        }
-        if (document.layers)
-          document.captureEvents(Event.MOUSEDOWN);
-        document.onmousedown = click;
-        document.oncontextmenu = click;
+        //function click (e) {
+          //if (!e)
+           // e = window.event;
+          //if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
+            //if (window.opera)
+            //  window.alert("");
+           // return false;
+          //}
+        //}
+        //if (document.layers)
+          //document.captureEvents(Event.MOUSEDOWN);
+        //document.onmousedown = click;
+        //document.oncontextmenu = click;
+            
+            // Disable inspect element
+            $(document).bind("contextmenu",function(e) {
+              e.preventDefault();
+            });
+            $(document).keydown(function(e){
+              if(e.which === 123){
+                return false;
+            }
+            });
         </script>
+        
+        
       
     </body>
 </html>
