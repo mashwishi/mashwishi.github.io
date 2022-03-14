@@ -1,485 +1,698 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <link rel="icon" href="assets/image/xfavicon.png" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Mashwishi's Website Portfolio">
 
-        <title>Mashwishi Portfolio</title>
+    <!-- Fav Icon  -->
+    <link rel="icon" href="assets/img/xfavicon.png"/>
+    <!--=============== LINE ICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/3.0/lineicons.css">
 
-        <link rel="stylesheet" href="assets/css/landing-page.css"/>
-        <link rel="stylesheet" href="assets/css/containers.css" />
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 
-        <script src="https://kit.fontawesome.com/610b0c91a4.js"></script>
-        
-    
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNJ2MMC4CR"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/style.css">
 
-          gtag('config', 'G-FNJ2MMC4CR');
-        </script>
+    <title>Mashwishi's Portfolio</title>
 
-    </head>
-    <body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FNJ2MMC4CR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        <!-- Messenger Chat Plugin Code -->
-        <div id="fb-root"></div>
+        gtag('config', 'G-FNJ2MMC4CR');
+    </script>
 
-        <!-- Your Chat Plugin code -->
-        <div id="fb-customer-chat" class="fb-customerchat">
-        </div>
+    <script type="text/javascript">   
+    $(document).ready(function(){
+        var mobile = document.getElementById("mobile");
+        var desktop = document.getElementById("desktop");
+        var home = document.getElementById("Home");
 
-        <script>
-          var chatbox = document.getElementById('fb-customer-chat');
-          chatbox.setAttribute("page_id", "760723953939223");
-          chatbox.setAttribute("attribution", "biz_inbox");
-          window.fbAsyncInit = function() {
-            FB.init({
-              xfbml            : true,
-              version          : 'v11.0'
-            });
-          };
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            mobile.style.display = "block";
+            desktop.style.display = "none";
+            mobile.style.display = "block";
+        }
 
-          (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
-        </script>
+        load_user_data();
+            function load_user_data(query)
+            {
+                $.ajax({
+                url:"./fetch/user_fetch.php",
+                method:"post",
+                data:{query:query},
+                success:function(data)
+                {
+                    $('#profile').html(data);
+                }
+                });
+            }
+    }        
+    </script>  
 
-  
-        <header class="header_area">
-            <div class="main_menu">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <div class="container">
-                        <a class="navbar-brand logo_h" href="/"><img src="assets/image/xlogo.png" alt="" /></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav menu_nav justify-content-end">
-                                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                            </ul>
-                            
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
-
-        <section class="home_banner_area">
-            <div class="banner_inner">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="banner_content">
-                                <h3 class="text-uppercase">Hell0</h3>
-                                <h1 class="text-uppercase">I'm mathew bella</h1>
-                                <h5 class="text-uppercase">freelance developer AND DESIGNER</h5>
-                                <div class="d-flex align-items-center">
-                                    <a class="primary_btn" href="https://discord.gg/WAh8eaF2Qq"><span>JOIN DISCORD</span></a>
-                                    <a class="primary_btn tr-bg" href="/"><span>CLIENT AREA</span></a>
-                                    <a class="primary_btn tr-bg" href="mailto:mathewagustinbella@outlook.com"><span>HIRE ME</span></a>
-                                    <!-- <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#4B57DE', 'B0B14A4MU');kofiwidget2.draw();</script>  -->
-                                  
-                                  
-                                  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-                                  <script>
-                                    kofiWidgetOverlay.draw('mashwishi', {
-                                      'type': 'floating-chat',
-                                      'floating-chat.donateButton.text': 'Support me',
-                                      'floating-chat.donateButton.background-color': '#4B57DE',
-                                      'floating-chat.donateButton.text-color': '#fff'
-                                    });
-                                  </script>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="home_right_img">
-                                <img class="" src="assets/image/banner/xhome-right.png.pagespeed.ic.ccJtiTKm6_.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <!-- nav -->
+        <nav class="nav container padd-15">
+            <!-- nav logo -->
+            <a href="#" class="nav-logo">
+                <h2>Mash</h2>
+            </a>
+            <!-- nav menu -->
+            <div class="nav-menu" id="nav-menu">
+                <!-- nav list -->
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#training" class="nav-link">Training</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a href="#pricing" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <!-- nav close -->
+                <div class="nav-close" id="nav-close">
+                    <i class="lni lni-close"></i>
                 </div>
             </div>
-        </section>
+            <!-- nav btn -->
+            <div class="nav-btns">
+                <!-- theme change btn -->
+                <i class="lni lni-pallet change-theme" id="theme-button"></i>
+                <!-- toggle btn -->
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="lni lni-grid-alt"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <section id="about" class="about_area section_gap">
+    <!--=============== MAIN ===============-->
+    <main class="main-content">
+        <!--=============== HOME ===============-->
+        <section class="home" id="home">
             <div class="container">
-                <div class="row justify-content-start align-items-center">
-                    <div class="col-lg-5">
-                        <div class="about_img">
-                            <img class="" src="assets/image/xabout-us.png.pagespeed.ic.Iuz2bOaGXd.png" alt="" />
-                        </div>
-                    </div>
-                    <div class="offset-lg-1 col-lg-5">
-                        <div class="main_title text-left">
-                            <h2>
-                                About me
-                            </h2>
-                            <p>
-                                Whose given. Were gathered. There first subdue greater. Bearing you Whales heaven midst their. Beast creepeth. Fish days.
-                            </p>
-                            <p>
-                                Is give may shall likeness made yielding spirit a itself together created after sea is in beast beginning signs open god you're gathering whose gathered cattle let. Creature whales fruit unto meat the life
-                                beginning all in under give two.
-                            </p>
-                            <a class="primary_btn" href="#"><span>Download CV</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <!-- intro -->
+                <div class="intro">
+                    <!-- avatar image -->
+                    <img src="assets/img/dark-mode.png" alt="Mashwishi" class="logo" id="for-dark" style="display: none;">
+                    <img src="assets/img/light-mode.png" alt="Mashwishi" class="logo" id="for-light">
+                    <!-- info -->
+                    <h1>Mashwishi</h1>
+                    <span>I'm a <span class="info-text">Full-Stack Developer</span></span>
+                    <!-- social icons -->
+                    <ul class="social-icons">
 
-        <section class="brand_area section_gap_bottom">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="single-brand-item d-table">
-                                    <div class="d-table-cell text-center">
-                                        <img src="assets/image/brands/menugo.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="single-brand-item d-table">
-                                    <div class="d-table-cell text-center">
-                                        <img src="assets/image/brands/clique.webp" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="single-brand-item d-table">
-                                    <div class="d-table-cell text-center">
-                                        <img src="assets/image/brands/pz.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="single-brand-item d-table">
-                                    <div class="d-table-cell text-center">
-                                        <img src="assets/image/brands/rh.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-6">
-                                <div class="single-brand-item d-table">
-                                    <div class="d-table-cell text-center">
-                                        <img src="assets/image/brands/xlogo5.png.pagespeed.ic.xi_Q3iLoDu.png" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <div class="offset-lg-2 col-lg-4 col-md-6">
-                        <div class="client-info">
-                            <div class="d-flex mb-50">
-                                <span class="lage">5</span>
-                                <span class="smll">Freelance Development Projects</span>
-                            </div>
-                            <div class="call-now d-flex">
-                                <div>
-                                    <span class="fa fa-phone"></span>
-                                </div>
-                                <div class="ml-15">
-                                    <p>call me now</p>
-                                    <h3>(+046) 438-7693</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features_area" id="services">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <div class="main_title">
-                            <h2>service offers</h2>
-                            <p>
-                               - - -
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row feature_inner">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="feature_item">
-                            <img src="assets/image/services/xs2.png.pagespeed.ic.E3Ih0KWluq.png" alt="" />
-                            <h4>Graphic Design</h4>
-                            <p>Design a website images, app icons and logo for your company or business.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="feature_item">
-                            <img src="assets/image/services/xs1.png.pagespeed.ic.sH5pCBXnaQ.png" alt="" />
-                            <h4>Web Development</h4>
-                            <p>Create an Ecommerce, Food Ordering System, Scheduling, Personal, Blog, Etc..</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="feature_item">
-                            <img src="assets/image/services/xs3.png.pagespeed.ic.yHsZ6K2KsT.png" alt="" />
-                            <h4>App Development</h4>
-                            <p>Build an Android app that supports multiple versions of android.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="feature_item">
-                            <img src="assets/image/services/xs4.png.pagespeed.ic.R1r6NQt9LU.png" alt="" />
-                            <h4>ASSISTANT</h4>
-                            <p>Assist you setting up your web hosting or help you set-up the scripts/templates you bought.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio_area" id="portfolio">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="main_title text-left">
-                            <h2>
-                                quality work <br />
-                                Recently done project
-                            </h2>
-                            <p>
-                              I currently don't have projects to showcase, I already have <strong>5 Projects</strong> however due to privacy and based on the contract I am not allowed to post it here.<br/>
-                              I'm currently developing some projects that I can share, For quick updates follow me on <a target="_blank" href="https://github.com/Mashwishi">Github</a>.
-                            </p>                            
-                        </div>
-                    </div>
-                </div>
-                <div class="filters portfolio-filter">
-                    <ul>
-                        <li class="active" data-filter="*">all</li>
-                        <li data-filter=".popular">popular</li>
-                        <li data-filter=".latest">latest</li>
-                        <li data-filter=".following">following</li>
-                        <li data-filter=".upcoming">upcoming</li>
+                        <li><a target="_blank" href="https://www.facebook.com/Mashwishi"><i class="lni lni-facebook-original"></i></a></li>
+                        <li><a target="_blank" href="https://www.twitter.com/Mashwishi"><i class="lni lni-twitter-original"></i></a></li>
+                        <li><a target="_blank" href="https://www.tiktok.com/@mashwishi"><i class="lni lni-tiktok"></i></a></li>
+                        <li><a target="_blank" href="https://www.instagram.com/mashwishi"><i class="lni lni-instagram-original"></i></a></li>                        
+                        <li><a target="_blank" href="https://www.youtube.com/mashwishi"><i class="lni lni-youtube"></i></a></li>
+                        <li><a target="_blank" href="https://github.com/Mashwishi"><i class="lni lni-github-original"></i></a></li>
+                        <li><a target="_blank" href="https://discord.io/Prunity"><i class="lni lni-discord"></i></a></li>
                     </ul>
+                    <!-- button -->
+                    <div>
+                        <a href="#" class="btn btn-default">Hire me</a>
+                    </div>
+                    <!-- scroll down mouse wheel -->
+                    <div class="scroll-down">
+                        <a href="#" class="mouse-wrapper">
+                            <span>Scroll Down</span>
+                            <span class="mouse">
+                                <span class="wheel"></span>
+                            </span>
+                        </a>
+                    </div>
                 </div>
-                <!-- 
-                <div class="filters-content">
-                    <div class="row portfolio-grid justify-content-center">
-                        <div class="col-lg-4 col-md-6 all latest">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp1.jpg.pagespeed.ic.foV_r7iEAW.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p1.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
+            </div>
+        </section>
+        <!--=============== About ===============-->
+        <section class="about section" id="about">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">About Me</h2>
+                <div class="row">
+                    <div class="about-img padd-15">
+                        <!-- avatar img -->
+                        <img src="assets/img/me.png" alt="MathewBella">
+                    </div>
+                    <div class="about-content padd-15">
+                        <div class="rounded">
+                            <div class="row">
+                                <div class="about-text padd-15">
+                                    <!-- about text -->
+                                    <p>I am Mashwishi, web developer from Cavite, Philippines. I have rich experience in web site design and building and customization, also I am good at Discord bot development.</p>
+                                    <div>
+                                        <a href="#" class="btn btn-default">Download CV</a>
+                                    </div>
                                 </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">minimal design</a></h4>
-                                    <p>Animated, portfolio</p>
+                                <div class="skills padd-15">
+                                    <div class="row">
+                                        <!-- skill item -->
+                                        <div class="skill-item">
+                                            <h4>Development</h4>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 95%; background: rgb(255,209,92);"></div>
+                                                <div class="skill-percent">95%</div>
+                                            </div>
+                                        </div>
+                                        <!-- skill item -->
+                                        <div class="skill-item">
+                                            <h4>Photography</h4>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 75%; background: rgb(255,76,96);"></div>
+                                                <div class="skill-percent">75%</div>
+                                            </div>
+                                        </div>
+                                        <!-- skill item -->
+                                        <div class="skill-item">
+                                            <h4>UI/UX design</h4>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 85%; background: rgb(108,108,229);"></div>
+                                                <div class="skill-percent">85%</div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 all popular">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp2.jpg.pagespeed.ic.NtLd_BqBEb.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p2.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">Paint wall</a></h4>
-                                    <p>Animated, portfolio</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- fact item -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-thumbs-up"></i>
+                        <div class="details">
+                            <!-- 
+                            RoyalHealth
+                            MenuGo
+                            Cliquespot
+                            PruneBot
+                            Prunity
+                            Virtual Vaccination
+                            -->
+                            <h3>6</h3>
+                            <p>Project done</p>
+                        </div>
+                    </div>
+                    <!-- fact item -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-coffee-cup"></i>
+                        <div class="details">
+                            <h3>13</h3>
+                            <p>Cup of coffee</p>
+                        </div>
+                    </div>
+                    <!-- fact item -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-users"></i>
+                        <div class="details">
+                            <h3>3</h3>
+                            <p>Satisfied clients</p>
+                        </div>
+                    </div>
+                    <!-- fact item -->
+                    <div class="fact-item padd-15">
+                        <i class="lni lni-cup"></i>
+                        <div class="details">
+                            <h3>28</h3>
+                            <p>Nominiees winner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=============== Services ===============-->
+        <section class="services section">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Services</h2>
+                <div class="row">
+                    <!-- service item -->
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner" style="background: rgb(108,108,229);">
+                            <img src="assets/img/service-1.svg" alt="">
+                            <h3>UI/UX design</h3>
+                            <p>Design a website layouts and images, app icons and logo for your company or business.</p>
+                        </div>
+                    </div>
+                    <!-- service item -->
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner" style="background: rgb(249,215,76);">
+                            <img src="assets/img/service-2.svg" alt="">
+                            <h3>Web Development</h3>
+                            <p>Create an Ecommerce, Food Ordering System, Scheduling, Personal, Blog, Discord Bot, Etc.</p>
+                        </div>
+                    </div>
+                    <!-- service item -->
+                    <div class="service-item padd-15">
+                        <div class="service-item-inner" style="background: rgb(249,123,139);">
+                            <img src="assets/img/service-3.svg" alt="">
+                            <h3>Photography</h3>
+                            <p>Due to COVID-19, This service is temporary not available and may no longer become available.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text padd-15">
+                    <p>Looking for a custom job? <a href="#">Click here</a> to contact me! 👋</p>
+                </div>
+            </div>
+        </section>
+        <!--=============== Experience ===============-->
+        <section class="section" id="experience">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Experience</h2>
+                <div class="row">
+                    <!-- education -->
+                    <div class="education padd-15">
+                        <div class="row">
+                            <div class="timeline-box">
+                                <div class="timeline">
+                                    <!-- timeline item -->
+                                    <div class="timeline-item">
+                                        <i class="lni lni-graduation timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2019 - present
+                                        </h3>
+                                        <h3 class="timeline-title">Cavite State University - Imus</h3>
+                                        <p class="timeline-text">Bachelor of Science in Computer Science</p>
+                                    </div>
+                                     <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-graduation timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2016 - 2018
+                                        </h3>
+                                        <h3 class="timeline-title">STI College Dasmariñas</h3>
+                                        <p class="timeline-text">Technical Vocational Track, IT in Mobile App and Web Development</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 all latest">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp3.jpg.pagespeed.ic.O-DTlU33BV.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p3.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">female light</a></h4>
-                                    <p>Animated, portfolio</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 all popular">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp4.jpg.pagespeed.ic.2CARfE34XZ.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p4.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">fourth air</a></h4>
-                                    <p>Animated, portfolio</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 all following">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp6.jpg.pagespeed.ic.tZ0HtKMGnD.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p5.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">together sign</a></h4>
-                                    <p>Animated, portfolio</p>
+                    </div>
+                    
+                    <!-- experience -->
+                    <div class="experience padd-15">
+                        <div class="row">
+                            <div class="timeline-box">
+                                <div class="timeline">
+                                    <!-- timeline item -->
+                                    <div class="timeline-item">
+                                        <i class="lni lni-briefcase timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2020 - 2022
+                                        </h3>
+                                        <h3 class="timeline-title">Web and App Developer</h3>
+                                        <p class="timeline-text"><strong>MenuGo Philippines</strong><br/>Dasma Bayan, Dasmariñas City, Cavite</p>
+                                    </div>
+                                     <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-briefcase timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2019 - 2020
+                                        </h3>
+                                        <h3 class="timeline-title">Freelance Developer</h3>
+                                        <p class="timeline-text"><strong>CliqueSpot</strong><br/>SMDC Trees Residences Pasong Putik, Nova Q.C</p>
+                                    </div>
+                                     <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-briefcase timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2019 - 2020
+                                        </h3>
+                                        <h3 class="timeline-title">Freelance Developer</h3>
+                                        <p class="timeline-text"><strong>Royale Health</strong><br/>Buhay Na Tubig, Imus City, Cavite</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 all upcoming">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp5.jpg.pagespeed.ic.UryQdb12VD.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p6.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">multiply fowl</a></h4>
-                                    <p>Animated, portfolio</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 all upcoming following">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp7.jpg.pagespeed.ic.jbb8i-A5nW.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p7.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">green heaven</a></h4>
-                                    <p>Animated, portfolio</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 all following">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp8.jpg.pagespeed.ic.JbK7jKCDeO.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p8.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="short_info">
-                                    <h4>fly male</h4>
-                                    <p>Animated, portfolio</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--=============== Training ===============-->
+        <section class="section" id="training">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Training</h2>
+                <div class="row">
+                    <!-- education -->
+                    <div class="education padd-15">
+                        <div class="row">
+                            <div class="timeline-box">
+                                <div class="timeline">
+                                    <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-certificate timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2019
+                                        </h3>
+                                        <h3 class="timeline-title">Social Media Responsibility and Etiquette: How To Be A Responsible Social Media User</h3>
+                                        <p class="timeline-text">Conference Room of Cavite State University, Imus Campus</p>
+                                    </div>                                 
+                                    <!-- timeline item -->
+                                    <div class="timeline-item">
+                                        <i class="lni lni-certificate timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2018
+                                        </h3>
+                                        <h3 class="timeline-title">Innovation in Technology: The Language of Future Innovators</h3>
+                                        <p class="timeline-text">Conference Room of Cavite State University, Imus Campus</p>
+                                    </div>
+                                     <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-certificate timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2018
+                                        </h3>
+                                        <h3 class="timeline-title">Senior High School Employment Preparation Seminar 2018</h3>
+                                        <p class="timeline-text">STI College Dasmariñas Gymnasium City of Dasmariñas, Cavite</p>
+                                    </div>                                   
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 all upcoming">
-                            <div class="portfolio_box">
-                                <div class="single_portfolio">
-                                    <img class="img-fluid w-100" src="assets/image/portfolio/xp9.jpg.pagespeed.ic.2Av2HQTLDr.jpg" alt="" />
-                                    <div class="overlay"></div>
-                                    <a href="assets/image/portfolio/p9.jpg" class="img-gal">
-                                        <div class="icon">
-                                            <span class="lnr lnr-cross"></span>
-                                        </div>
-                                    </a>
+                    </div>
+                    
+                    <!-- experience -->
+                    <div class="experience padd-15">
+                        <div class="row">
+                            <div class="timeline-box">
+                                <div class="timeline">
+                                    <!-- timeline item -->
+                                    <div class="timeline-item">
+                                        <i class="lni lni-certificate timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2022
+                                        </h3>
+                                        <h3 class="timeline-title">CS EXPO 2022</h3>
+                                        <p class="timeline-text">Leveraging Communities to Greater Possibilities with Computing Technologies, a three-day event that showcases the theses and projects of FEU Institute of Technology Computer Science undergraduate students specializing in Software Engineering and talks about the different trends in the technological industry.</p>
+                                    </div>
+                                     <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-certificate timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2022
+                                        </h3>
+                                        <h3 class="timeline-title">Introduction to Progressive Web Apps</h3>
+                                        <p class="timeline-text">Organized by PWA Philippines</p>
+                                    </div>
+                                     <!-- timeline item -->
+                                     <div class="timeline-item">
+                                        <i class="lni lni-certificate timeline-icon"></i>
+                                        <h3 class="timeline-date">
+                                            <i class="lni lni-calendar"></i> 2022
+                                        </h3>
+                                        <h3 class="timeline-title">Automated Vulnerability Management on AWS with Amazon Inspector</h3>
+                                        <p class="timeline-text">Presented by AWS Machine Learning Hero Joshua Arvin Lat via Zoom (Webinar)</p>
+                                    </div>
                                 </div>
-                                <div class="short_info">
-                                    <h4><a href="portfolio-details.html">season face</a></h4>
-                                    <p>Animated, portfolio</p>
-                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>        
+        <!--=============== Pricing ===============-->
+        <section class="section pricing" id="pricing">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Pricing Plans</h2>
+                <div class="row">
+                    <!-- prices -->
+                    <div class="prices">
+                        <div class="price-item">
+                            <img src="assets/img/price-1.svg" alt="">
+                            <h3 class="plan">Personal</h3>
+                            <p>A simple personal static progressive website application for your career</p>
+                            <p>Developed with HTML, CSS & JS</p>
+                            <h3 class="price"><em>$</em>85+<span>Project</span></h3>
+                            <a href="#" class="btn btn-default">Get Started</a>
+                        </div>
+                    </div>
+                     <!-- prices -->
+                     <div class="prices">
+                        <div class="price-item best">
+                            <span class="badge">Recommended</span>
+                            <img src="assets/img/price-2.svg" alt="">
+                            <h3 class="plan">Discord Bot</h3>
+                            <p>A custom discord bot with a feature of client's request, Free hosting setup can be also included via <a href="https://www.heroku.com/" target="_blank">Heroku</a> Cloud Hosting.</p>
+                            <p>Powered by Discord.js & Nodejs</p>
+                            <h3 class="price"><em>$</em>95+<span>Project</span></h3>
+                            <a href="#" class="btn btn-default">Get Started</a>
+                        </div>
+                    </div>
+                     <!-- prices -->
+                     <div class="prices">
+                        <div class="price-item">
+                            <img src="assets/img/price-3.svg" alt="">
+                            <h3 class="plan">Business</h3>
+                            <p>A dynamic website that can be used for commercial or business such as Ecommerce, Booking, Blog, etc.</p>
+                            <p>Developed with Php 7 & MySQL</p>
+                            <h3 class="price"><em>$</em>950+<span>Project</span></h3>
+                            <a href="#" class="btn btn-default">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=============== Portfolio ===============-->
+        <section class="portfolio section" id="portfolio">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Portfolio</h2>
+                <div class="row">
+                    <div class="portfolio-filter padd-15">
+                        <div class="portfolio-filter-inner">
+                            <button type="button" class="active" data-filter="all">Everything</button>
+                            <button type="button" data-filter="website">Web & Apps</button>
+                            <button type="button" data-filter="discord">Discord</button>
+                            <button type="button" data-filter="design">Design</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- portfolio item -->
+                    <div class="portfolio-item padd-15" data-category="discord">
+                        <div class="portfolio-item-inner">
+                            <div class="portfolio-item-thumbnail">
+                                <img src="assets/img/thumb/wip.jpg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <span class="term">Coming Soon</span>
+                            <h3 class="portfolio-item-title">Currently in Progress..</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>
+                    <!-- portfolio item -->
+                    <div class="portfolio-item padd-15" data-category="design">
+                        <div class="portfolio-item-inner">
+                            <div class="portfolio-item-thumbnail">
+                                <img src="assets/img/thumb/wip.jpg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <span class="term">Coming Soon</span>
+                            <h3 class="portfolio-item-title">Currently in Progress..</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>  
+                    <!-- portfolio item -->
+                    <div class="portfolio-item padd-15" data-category="website">
+                        <div class="portfolio-item-inner">
+                            <div class="portfolio-item-thumbnail">
+                                <img src="assets/img/thumb/wip.jpg" alt="">
+                                <div class="mask"></div>
+                            </div>
+                            <span class="term">Coming Soon</span>
+                            <h3 class="portfolio-item-title">Currently in Progress..</h3>
+                            <span class="more-button">&hellip;</span>
+                        </div>
+                    </div>                                      
+                </div>
+            </div>
+        </section>
+        <!--=============== Testimonial ===============-->
+        <section class="section">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Clients & Reviews</h2>
+                <!-- testimonial wrapper -->
+                <div class="swiper testimonial-wrapper">
+                    <div class="swiper-wrapper">
+                        <!-- testimonial item -->
+                        <div class="testimonial-item swiper-slide">
+                            <div class="thumb">
+                                <img src="assets/img/clients/menugo.jpg" alt="">
+                            </div>
+                            <h3>MenuGo Philippines</h3>
+                            <span class="subtitle">Founder / CEO</span>
+                            <div class="comment">I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck! 👍</div>
+                        </div>
+                        <!-- testimonial item -->
+                        <div class="testimonial-item swiper-slide">
+                            <div class="thumb">
+                                <img src="assets/img/clients/royalhealth.jpg" alt="">
+                            </div>
+                            <h3>Royale Health</h3>
+                            <span class="subtitle">Founder / CEO</span>
+                            <div class="comment">I enjoy working with the theme and learn so much. You guys make the process fun and interesting. Good luck! 🔥</div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <!--=============== Blog ===============-->
+        <section class="section">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Latest Posts</h2>
+                <div class="row">
+                    <!-- blog item -->
+                    <div class="blog-item padd-15">
+                        <div class="inner">
+                            <div class="thumb">
+                                <a href="#"><span class="category">Tutorial</span></a>
+                                <a href="#"><img src="assets/img/thumb/howto.webp" alt=""></a>
+                            </div>
+                            <div class="details">
+                                <h3 class="title"><a href="#">Learn how to create a simple website</a></h3>
+                                <ul class="meta">
+                                    <li>09 February, 2022</li>
+                                    <li>Mashwishi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog item -->
+                    <div class="blog-item padd-15">
+                        <div class="inner">
+                            <div class="thumb">
+                                <a href="#"><span class="category">Tutorial</span></a>
+                                <a href="#"><img src="assets/img/thumb/res.png" alt=""></a>
+                            </div>
+                            <div class="details">
+                                <h3 class="title"><a href="#">Create a responsive website</a></h3>
+                                <ul class="meta">
+                                    <li>07 February, 2022</li>
+                                    <li>Mashwishi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog item -->
+                    <div class="blog-item padd-15">
+                        <div class="inner">
+                            <div class="thumb">
+                                <a href="dicord.io/Prunity"><span class="category">Promotion</span></a>
+                                <a href="dicord.io/Prunity"><img src="assets/img/thumb/discord.jfif" alt=""></a>
+                            </div>
+                            <div class="details">
+                                <h3 class="title"><a href="dicord.io/Prunity">Become part of our discord community</a></h3>
+                                <ul class="meta">
+                                    <li>09 February, 2022</li>
+                                    <li>Mashwishi</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                                  remove this soon --> 
         </section>
-
-        <section class="newsletter_area">
-          <div class="container">
-          <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <div class="main_title">
-                            <h2>Programming Languages</h2>
-                            <figure><embed width="100%" src="https://wakatime.com/share/@Mashwishi/6784b19b-638e-4e79-8a55-142a8402a5f3.svg"></embed></figure>
-                        </div>
-                    </div>
-                </div>    
-          </div>
-        </section>
-
-        <footer class="footer_area" id="contact">
+        <!--=============== Stats ===============-->
+        <section class="section">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="footer_top flex-column">
-                            <div class="footer_logo">
-                            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#4B57DE', 'B0B14A4MU');kofiwidget2.draw();</script> 
-                                <h4>Follow Me</h4>
+                <!-- section title -->
+                <h2 class="section-title padd-15">Programming Stats</h2>
+                <figure><embed width="100%" src="https://wakatime.com/share/@Mashwishi/6784b19b-638e-4e79-8a55-142a8402a5f3.svg"></embed></figure>
+            </div>
+        </section>        
+        <!--=============== Contact ===============-->
+        <section class="contact section" id="contact">
+            <div class="container">
+                <!-- section title -->
+                <h2 class="section-title padd-15">Contact us</h2>
+                <div class="row">
+                    <!-- contact box -->
+                    <div class="contact-box padd-15">
+                        <div class="contact-data">
+                            <!-- contact information -->
+                            <div class="contact-information">
+                                <h3 class="contact-subtitle">Call us for instant support</h3>
+                                <span class="contact-description">
+                                    <i class="lni lni-phone contact-icon"></i>
+                                    +63 909 390 2913
+                                </span>
                             </div>
-                            <div class="footer_social">
-                                <a target="_blank" href="https://www.facebook.com/Mashwishi/"><i class="fa fa-facebook"></i></a>
-                                <a target="_blank" href="https://www.twitter.com/Mashwishi/"><i class="fa fa-twitter"></i></a>
-                                <a target="_blank" href="https://www.instagram.com/mashwishi/"><i class="fa fa-instagram"></i></a>
-                                <a target="_blank" href="https://www.twitch.tv/Mashwishiii"><i class="fa fa-twitch"></i></a>
-                                <a target="_blank" href="https://www.youtube.com/mashwishi/"><i class="fa fa-youtube"></i></a>
-                                <a target="_blank" href="https://www.tiktok.com/@mashwishi/"><i class="fab fa-tiktok"></i></a>
-                                <a target="_blank" href="https://github.com/Mashwishi"><i class="fa fa-github"></i></a>
-                                <a target="_blank" href="https://discord.gg/WAh8eaF2Qq"><i class="fab fa-discord"></i></a>
+                             <!-- contact information -->
+                             <div class="contact-information">
+                                <h3 class="contact-subtitle">Write us by mail</h3>
+                                <span class="contact-description">
+                                    <i class="lni lni-user contact-icon"></i>
+                                    mashwishi@techie.com
+                                </span>
                             </div>
                         </div>
                     </div>
+                    <!-- contact form -->
+                    <form action="" class="contact-form padd-15">
+                        <div class="contact-inputs">
+                            <!-- contact content -->
+                            <div class="contact-content">
+                                <input type="email" class="contact-input">
+                                <label for="" class="contact-label">Email</label>
+                                <span></span>
+                            </div>
+                            <!-- contact content -->
+                            <div class="contact-content">
+                                <input type="text" class="contact-input">
+                                <label for="" class="contact-label">Subject</label>
+                                <span></span>
+                            </div>
+                            <!-- contact content -->
+                            <div class="contact-content contact-area">
+                                <textarea name="" id="" cols="30" rows="10" class="contact-input"></textarea>
+                                <label for="" class="contact-label">Message</label>
+                                <span></span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-default">Send Message</a>
+                    </form>
                 </div>
-                <div class="row footer_bottom justify-content-center">
-                    <p class="col-lg-8 col-sm-12 footer-text">
-                        Copyright &copy;
+            </div>
+        </section>
+        <!--=============== Footer ===============-->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-text padd-15">
+                    <p>
+                    Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
                         </script>
@@ -488,45 +701,65 @@
                 </div>
             </div>
         </footer>
+    </main>
+    <!--=============== Theme Customize ===============-->
+    <div class="customize-theme">
+        <div class="card">
+            <h2>Customize your view</h2>
+            <p>Manage your font size, color, and background</p>
+            <!-- font size -->
+            <div class="font-size">
+                <h3>Font Size</h3>
+                <div>
+                    <h6>Aa</h6>
+                    <div class="choose-size">
+                        <span class="font-size-1"></span>
+                        <span class="font-size-2"></span>
+                        <span class="font-size-3 active"></span>
+                        <span class="font-size-4"></span>
+                    </div>
+                    <h3>Aa</h3>
+                </div>
+            </div>
+            <!-- color -->
+            <div class="color">
+                <h3>Color</h3>
+                <div class="choose-color">
+                    <span class="color-1"></span>
+                    <span class="color-2"></span>
+                    <span class="color-3 active"></span>
+                    <span class="color-4"></span>
+                    <span class="color-5"></span>
+                </div>
+            </div>
+            <!-- background -->
+            <div class="background">
+                <h3>background</h3>
+                <div class="choose-bg">
+                    <div class="bg-1 active">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                    </div>
+                    <div class="bg-2">
+                        <span></span>
+                        <h5 for="bg-2">Dim</h5>
+                    </div>
+                    <div class="bg-3">
+                        <span></span>
+                        <h5 for="bg-3">Dark</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
-        <script src="assets/js/popper.bootstrap.min.js"></script>
-        <script>
-            eval(mod_pagespeed_5SrcSFdP9s);
-        </script>
-        <script>
-            eval(mod_pagespeed_RAlAPbgzdt);
-        </script>
-        <script>
-            eval(mod_pagespeed_JVCt6U$RWm);
-        </script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script>
-            eval(mod_pagespeed_7XiCDaqz9Y);
-        </script>
-        <script>
-            eval(mod_pagespeed_qtaEnRCGUU);
-        </script>
-        <script>
-            eval(mod_pagespeed_egycAaX858);
-        </script>
-        <script>
-            eval(mod_pagespeed_1w3YMRmVOW);
-        </script>
-        <script src="assets/js/owl-carousel.js"></script>
-        <script>
-            eval(mod_pagespeed_2G2dGCLM1F);
-        </script>
-        <script>
-            eval(mod_pagespeed_eJbcNidVmq);
-        </script>
-        <script>
-            eval(mod_pagespeed_mRrQR8Wtnp);
-        </script>
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    
+    <!--=============== JS ===============-->
+    <script src="assets/js/main.js"></script>
 
-        <script src="assets/js/theme.js"></script>
-        
-        <script type="text/javascript">
+    <script type="text/javascript">
         function click (e) {
           if (!e)
            e = window.event;
@@ -541,9 +774,43 @@
         document.onmousedown = click;
         document.oncontextmenu = click;
 
-        </script>
-        
-        
-      
-    </body>
+    </script>
+
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+    <script>
+    kofiWidgetOverlay.draw('mashwishi', {
+        'type': 'floating-chat',
+        'floating-chat.donateButton.text': 'Support me',
+        'floating-chat.donateButton.background-color': '#4B57DE',
+        'floating-chat.donateButton.text-color': '#fff'
+    });
+    </script>
+
+    <!-- Messenger Chat Plugin Code -->
+        <div id="fb-root"></div>
+
+        <!-- Your Chat Plugin code -->
+        <div id="fb-customer-chat" class="fb-customerchat">
+        </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "760723953939223");
+        chatbox.setAttribute("attribution", "biz_inbox");
+        window.fbAsyncInit = function() {
+        FB.init({
+            xfbml            : true,
+            version          : 'v11.0'
+        });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+</body>
 </html>
