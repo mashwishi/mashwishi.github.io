@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mashwishi's Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css'>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+</head>
+<body>
+  <header>
+    <div id="circular-bg"></div>
+    <div id="logo"> <a href="https://github.com/Mashwishi" target="_blank">MASHWISHI</a></div>
+    <nav>
+      <a href="https://www.facebook.com/Mashwishi" target="_blank">Facebook</a>
+      <a href="https://twitter.com/Mashwishi" target="_blank">Twitter</a>
+      <a href="https://discord.gg/Z955qk4CsD" target="_blank">Discord</a>
+      <a href="https://github.com/Mashwishi" target="_blank">Github</a>
+      <a href="https://www.linkedin.com/in/mashwishi" target="_blank">LinkedIn</a>
+    </nav>
+    <!-- <div id="menu-icon">
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div> -->
+    <h1 id="platten">Mathew</h1><img id="image-animate" src="assets/images/me.png" alt="Mashwishi"/> 
+    <h2 id="headline">&nbsp;Full-Stack Dev. <br/>&nbsp;& Graphic Designer</h2>
+    <div id="small-screen"></div>
+  </header>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  
+<script>
+  const image = document.getElementById("image-animate");
+  
+  image.addEventListener("mousemove", function(event) {
+    const x = event.clientX;
+    const y = event.clientY;
+  
+    anime({
+      targets: image,
+      translateX: x / 20,
+      translateY: y / 20,
+      duration: 1000,
+      easing: 'linear'
+    });
+  });
+  </script>
+</body>
+</html>
